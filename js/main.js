@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.renderizarPensamentos()
 
     formularioPensamento.addEventListener("submit", manipularSubmissaoFormulario)
-    
+
     btnCancelar.addEventListener("click", ui.limparForm)
 })
 
@@ -18,7 +18,11 @@ async function manipularSubmissaoFormulario(event) {
     const conteudo = document.getElementById("pensamento-conteudo").value
 
     try {
-        await api.salvarPensamento({ conteudo, autoria })
+        if (id) {
+            await api.editarPensamento({ id, conteudo, autoria })
+        } else {
+            await api.salvarPensamento({ conteudo, autoria })
+        }
         ui.renderizarPensamentos()
     } catch (error) {
         alert("Erro ao salvar pensamento")
