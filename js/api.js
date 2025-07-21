@@ -3,8 +3,8 @@ const URL_BASE = "http://localhost:3000"
 const api = {
     async buscarPensamentos() {
         try {
-            const response = await fetch(`${URL_BASE}/pensamentos`)
-            return await response.json()
+            const response = await fetch(`${URL_BASE}/pensamentos`) // axios.get no lugar do fetch
+            return await response.json() // response.data se fosse axios
         } catch (error) {
             alert("Erro ao buscar pensamentos")
             throw error
@@ -13,14 +13,14 @@ const api = {
 
     async salvarPensamento(pensamento) {
         try {
-            const response = await fetch(`${URL_BASE}/pensamentos`, {
+            const response = await fetch(`${URL_BASE}/pensamentos`, { // await axios.post(`${URL_BASE}/pensamentos`, pensamento) não precisaria informar headers ou body
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(pensamento)
             })
-            return await response.json()
+            return await response.json() // response.data se fosse axios
         } catch (error) {
             alert("Erro ao salvar pensamento")
             throw error
@@ -29,8 +29,8 @@ const api = {
 
     async buscarPensamentoPorId(id) {
         try {
-            const response = await fetch(`${URL_BASE}/pensamentos/${id}`)
-            return await response.json()
+            const response = await fetch(`${URL_BASE}/pensamentos/${id}`) // axios.get no lugar do fetch
+            return await response.json() // response.data
         } catch (error) {
             alert("Erro ao buscar pensamento")
             throw error
@@ -39,14 +39,14 @@ const api = {
 
     async editarPensamento(pensamento) {
         try {
-            const response = await fetch(`${URL_BASE}/pensamentos/${pensamento.id}`, {
+            const response = await fetch(`${URL_BASE}/pensamentos/${pensamento.id}`, { // axios.put(`${URL_BASE}/pensamentos/${pensamento.id}`, pensamento) não precisaria informar headers ou body 
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(pensamento)
             })
-            return await response.json()
+            return await response.json() //response.data
         } catch (error) {
             alert("Erro ao editar pensamento")
             throw error
@@ -55,7 +55,7 @@ const api = {
 
     async excluirPensamento(id) {
         try {
-            const response = await fetch(`${URL_BASE}/pensamentos/${id}`, {
+            const response = await fetch(`${URL_BASE}/pensamentos/${id}`, { // axios.delete(`${URL_BASE}/pensamentos/${pensamento.id}`) sem declarar o method
                 method: "DELETE",
             })
         } catch (error) {
