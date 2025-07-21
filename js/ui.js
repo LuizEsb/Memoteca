@@ -1,8 +1,8 @@
 import api from "./api.js"
 
 const ui = {
-   
-    async preencherForm(pensamentoId){
+
+    async preencherForm(pensamentoId) {
         const pensamento = await api.buscarPensamentoPorId(pensamentoId)
         document.getElementById("pensamento-id").value = pensamento.id
         document.getElementById("pensamento-conteudo").value = pensamento.conteudo
@@ -11,10 +11,19 @@ const ui = {
 
     async renderizarPensamentos() {
         const listaPensamentos = document.getElementById("lista-pensamentos")
+        const mensagemVazia = document.getElementById("mensagem-vazia")
+        listaPensamentos.innerHTML = ""
 
         try {
             const pensamentos = await api.buscarPensamentos()
             pensamentos.forEach(ui.adicionarPensamentoNaLista)
+
+            if (pensamentos.length == 0) {
+                mensagemVazia.style.display = "block"
+            } else {
+                mensagemVazia.style.display = "none"
+                pensamentos.forEach(ui.adicionarPensamentoNaLista)
+            }
         } catch {
             alert("Erro ao renderizar pensamentos")
         }
@@ -38,20 +47,37 @@ const ui = {
         const pensamentoAutoria = document.createElement("div")
         pensamentoAutoria.textContent = pensamento.autoria
         pensamentoAutoria.classList.add("pensamento-autoria")
-        
+
         const btnEditar = document.createElement("button")
         btnEditar.classList.add("botao-editar")
         btnEditar.onclick = () => ui.preencherForm(pensamento.id)
-        
+
         const iconeEditar = document.createElement("img")
         iconeEditar.src = "assets/imagens/icone-editar.png"
         iconeEditar.alt = "Editar"
         btnEditar.appendChild(iconeEditar)
 
+        const btnExcluir = document.createElement("button")
+        btnExcluir.classList.add("botao-excluir")
+        btnExcluir.onclick = async () => {
+            try {
+                await api.excluirPensamento(pensamento.id)
+                ui.renderizarPensamentos()
+            } catch (error) {
+                alert("Erro ao excluir pensamento")
+            }
+        }
+
+        const iconeExcluir = document.createElement("img")
+        iconeExcluir.src = "assets/imagens/icone-excluir.png"
+        iconeExcluir.alt = "Excluir"
+        btnExcluir.appendChild(iconeExcluir)
+
         const icones = document.createElement("div")
         icones.classList.add("icones")
         icones.appendChild(btnEditar)
-        
+        icones.appendChild(btnExcluir)
+
         li.appendChild(iconeAspas)
         li.appendChild(pensamentoConteudo)
         li.appendChild(pensamentoAutoria)
@@ -61,6 +87,7 @@ const ui = {
 
     limparForm() {
         document.getElementById("pensamento-form").reset()
+        document.getElementById("pensamento-id").value = null
     }
 }
 

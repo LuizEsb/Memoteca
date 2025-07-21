@@ -286,3 +286,23 @@ span {
 .nome_dev {
   color: #4697fa;
 }
+
+.mensagem-vazia {
+  display: none;
+  text-align: center;
+  color: var(--Azul-Dark, #041832);
+  margin-top: 40px;
+}
+
+.mensagem-vazia img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.mensagem-vazia p {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  text-align: center;
+}
