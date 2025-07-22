@@ -8,6 +8,8 @@ Memoteca é um aplicativo organizador de pensamentos e frases que permite cadast
 
 `Listagem de pensamentos`: Exibe os pensamentos cadastrados, permitindo visualizar o texto e a autoria.
 
+`Pesquisa de pensamentos`: Barra de pesquisa typeahead que facilita a busca dinâmica por pensamentos já registrados.
+
 `Edição de pensamentos`: Permite editar pensamentos existentes, atualizando as informações conforme necessário.
 
 `Exclusão de pensamentos`: Permite remover pensamentos da lista.
@@ -15,6 +17,8 @@ Memoteca é um aplicativo organizador de pensamentos e frases que permite cadast
 ## ✔️ Técnicas e tecnologias utilizadas
 
 `JavaScript`: Linguagem de programação utilizada para desenvolver a lógica do aplicativo.
+
+`EcmaScript 6+`: Especificação da linguagem de script utilizada nos métodos de pesquisa.
 
 `Fetch API`: Utilizada para realizar requisições HTTP para comunicação com o servidor.
 
