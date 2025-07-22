@@ -79,8 +79,17 @@ const ui = {
         iconeExcluir.alt = "Excluir"
         btnExcluir.appendChild(iconeExcluir)
 
+        const btnFavorito = document.createElement("button")
+        btnFavorito.classList.add("botao-favorito")
+
+        const iconeFavorito = document.createElement("img")
+        iconeFavorito.src = "assets/imagens/icone-favorito_outline.png"
+        iconeFavorito.alt = "icone de favorito"
+        btnFavorito.appendChild(iconeFavorito)
+
         const icones = document.createElement("div")
         icones.classList.add("icones")
+        icones.appendChild(btnFavorito)
         icones.appendChild(btnEditar)
         icones.appendChild(btnExcluir)
 
