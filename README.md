@@ -10,6 +10,8 @@ Memoteca é um aplicativo organizador de pensamentos e frases que permite cadast
 
 `Pesquisa de pensamentos`: Barra de pesquisa typeahead que facilita a busca dinâmica por pensamentos já registrados.
 
+`Favoritar pensamentos`: É possível favoritar os pensamentos que você mais gostou!
+
 `Edição de pensamentos`: Permite editar pensamentos existentes, atualizando as informações conforme necessário.
 
 `Exclusão de pensamentos`: Permite remover pensamentos da lista.

@@ -8,7 +8,7 @@
     },
     {
       "id": "4c7d",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Da vida reclama, mas sem ela não vive!",
       "autoria": "Mestre Yoda"
     },
@@ -74,7 +74,7 @@
     },
     {
       "id": "6a42",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "O homem mais inteligente do mundo não apresenta ameaça maior que a gentalha mais inteligente.",
       "autoria": "Quico"
     }
