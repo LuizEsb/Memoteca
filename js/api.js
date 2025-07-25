@@ -1,10 +1,23 @@
 const URL_BASE = "http://localhost:3000"
 
+const converterStringParaData = (dataString) => {
+    const [ano, mes, dia] = dataString.split("-")
+    return new Date(Date.UTC(ano, mes - 1, dia))
+}
+
 const api = {
     async buscarPensamentos() {
         try {
             const response = await fetch(`${URL_BASE}/pensamentos`) // axios.get no lugar do fetch
-            return await response.json() // response.data se fosse axios
+            const pensamentos = await response.json() // response.data se fosse axios
+
+            return pensamentos.map(pensamento => {
+                return {
+                    ...pensamento,
+                    data: new Date(pensamento.data)
+                }
+            })
+
         } catch (error) {
             alert("Erro ao buscar pensamentos")
             throw error
@@ -13,14 +26,12 @@ const api = {
 
     async salvarPensamento(pensamento) {
         try {
-            const response = await fetch(`${URL_BASE}/pensamentos`, { // await axios.post(`${URL_BASE}/pensamentos`, pensamento) não precisaria informar headers ou body
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(pensamento)
+            const data = converterStringParaData(pensamento.data)
+            const response = await axios.post(`${URL_BASE}/pensamentos`, {
+                ...pensamento,
+                data
             })
-            return await response.json() // response.data se fosse axios
+            return await response.data 
         } catch (error) {
             alert("Erro ao salvar pensamento")
             throw error
@@ -30,7 +41,12 @@ const api = {
     async buscarPensamentoPorId(id) {
         try {
             const response = await fetch(`${URL_BASE}/pensamentos/${id}`) // axios.get no lugar do fetch
-            return await response.json() // response.data
+            const pensamento = await response.json() // response.data
+
+            return {
+                ...pensamento,
+                data: new Date(pensamento.data)
+            }
         } catch (error) {
             alert("Erro ao buscar pensamento")
             throw error
