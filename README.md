@@ -2,10 +2,14 @@
 
 Memoteca é um aplicativo organizador de pensamentos e frases que permite cadastrar, listar, editar e deletar pensamentos, incluindo informações como conteúdo e autoria. Desenvolvi esse projeto durante meus estudos e me auxiliou a praticar implementações CRUD com requisições HTTP.
 
+![imagem banner memoteca](https://i.imgur.com/w3Jn3Hq.png)
+
 ## 🔨 Funcionalidades do projeto
 
 `Cadastro de pensamentos`: Permite adicionar novos pensamentos à lista, inserindo informações como conteúdo e autoria.
 
+![imagem formulário de cadastro de pensamento](https://i.imgur.com/1fmKwFq.png)
+cd .
 `Listagem de pensamentos`: Exibe os pensamentos cadastrados, permitindo visualizar o texto e a autoria.
 
 `Pesquisa de pensamentos`: Barra de pesquisa typeahead que facilita a busca dinâmica por pensamentos já registrados.
@@ -15,6 +19,8 @@ Memoteca é um aplicativo organizador de pensamentos e frases que permite cadast
 `Edição de pensamentos`: Permite editar pensamentos existentes, atualizando as informações conforme necessário.
 
 `Exclusão de pensamentos`: Permite remover pensamentos da lista.
+
+![imagem mural, barra de pesquisa e pensamentos](https://i.imgur.com/ZXp25k1.png)
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
