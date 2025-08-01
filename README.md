@@ -9,7 +9,7 @@ Memoteca é um aplicativo organizador de pensamentos e frases que permite cadast
 `Cadastro de pensamentos`: Permite adicionar novos pensamentos à lista, inserindo informações como conteúdo e autoria.
 
 ![imagem formulário de cadastro de pensamento](https://i.imgur.com/1fmKwFq.png)
-cd .
+
 `Listagem de pensamentos`: Exibe os pensamentos cadastrados, permitindo visualizar o texto e a autoria.
 
 `Pesquisa de pensamentos`: Barra de pesquisa typeahead que facilita a busca dinâmica por pensamentos já registrados.
