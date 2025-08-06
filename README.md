@@ -70,13 +70,12 @@ Acesse o backend localmente em seu navegador:
 http://localhost:3000
 
 Para executar o frontend, abra o projeto no Visual Studio Code. Com a extensão Live Server instalada, clique com o botão direito no arquivo index.html e selecione "Open with Live Server" no menu de contexto.
+Acesse o frontend localmente em seu navegador:
+
+http://localhost:5500
 
 ## Feito por:
 
 ### LuizEsb
 
 ### [Linkedin](https://www.linkedin.com/in/luiz-felipe-esboldrim-9942a0345/)
-
-Acesse o frontend localmente em seu navegador:
-
-http://localhost:5500
